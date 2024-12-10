@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>&ast;&ast;error5&period;md &lpar;&#x672a;&#x8d4b;&#x503c;&#x7684;&#x6570;&#x7ec4;&#x8f93;&#x51fa;&#x540e;&#x662f;&#x4e71;&#x7801;&rpar;&ast;&ast;</title>
+            <title>&#x9519;&#x8bef;&#x70b9; 5&#xff1a;&#x672a;&#x8d4b;&#x503c;&#x7684;&#x6570;&#x7ec4;&#x8f93;&#x51fa;&#x540e;&#x662f;&#x4e71;&#x7801;</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3302,21 +3302,17 @@ body,
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h3 id="error5md-未赋值的数组输出后是乱码"><strong><a href="http://error5.html">error5.md</a> (未赋值的数组输出后是乱码)</strong></h3>
-<pre><code class="language-markdown"><span class="hljs-section"># 错误点 5：未赋值的数组输出后是乱码</span>
+            <div class="github-markdown-content"><h1 id="错误点-5未赋值的数组输出后是乱码">错误点 5：未赋值的数组输出后是乱码</h1>
+<p>如果数组未被初始化或赋值，输出时会出现乱码。务必确保在使用数组前先进行初始化。</p>
+<h2 id="示例">示例</h2>
+<pre><code class="language-c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 
-如果数组未被初始化或赋值，输出时会出现乱码。务必确保在使用数组前先进行初始化。
-
-<span class="hljs-section">## 示例</span>
-<span class="hljs-code">```c
-#include &lt;stdio.h&gt;
-
-int main() {
-    int arr[5];
-    printf(&quot;%d&quot;, arr[0]);  // 未初始化，输出乱码
-    return 0;
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> {
+    <span class="hljs-type">int</span> arr[<span class="hljs-number">5</span>];
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, arr[<span class="hljs-number">0</span>]);  <span class="hljs-comment">// 未初始化，输出乱码</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</span></code></pre>
+</code></pre>
 </div>
         </div>
             

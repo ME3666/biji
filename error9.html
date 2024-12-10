@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>&ast;&ast;error9&period;md &lpar;&#x4e8c;&#x8fdb;&#x5236;&#x64cd;&#x4f5c;&rpar;&ast;&ast;</title>
+            <title>&#x9519;&#x8bef;&#x70b9; 9&#xff1a;&#x4e8c;&#x8fdb;&#x5236;&#x64cd;&#x4f5c;</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3302,21 +3302,19 @@ body,
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h3 id="error9md-二进制操作"><strong><a href="http://error9.html">error9.md</a> (二进制操作)</strong></h3>
-<pre><code class="language-markdown"><span class="hljs-section"># 错误点 9：二进制操作</span>
-
-<span class="hljs-section">## `x % 2` vs `x &amp; 1`</span>
-<span class="hljs-bullet">-</span> <span class="hljs-code">`x % 2`</span> 使用模运算，计算 <span class="hljs-code">`x`</span> 除以 2 的余数，结果为 0 表示偶数，1 表示奇数。
-<span class="hljs-bullet">-</span> <span class="hljs-code">`x &amp; 1`</span> 使用按位与运算，检查 <span class="hljs-code">`x`</span> 的最低有效位（LSB）。如果是奇数，最低有效位为 1；如果是偶数，最低有效位为 0。
-
-<span class="hljs-section">## 交换两个整数的值（不使用临时变量）</span>
-<span class="hljs-code">```c
-swap(int *a, int *b) {
-    *a = *a ^ *b;  // a 存储了 a 和 b 的异或结果
-    *b = *a ^ *b;  // b 变为原来的 a 的值
-    *a = *a ^ *b;  // a 变为原来的 b 的值
+            <div class="github-markdown-content"><h1 id="错误点-9二进制操作">错误点 9：二进制操作</h1>
+<h2 id="x--2-vs-x--1"><code>x % 2</code> vs <code>x &amp; 1</code></h2>
+<ul>
+<li><code>x % 2</code> 使用模运算，计算 <code>x</code> 除以 2 的余数，结果为 0 表示偶数，1 表示奇数。</li>
+<li><code>x &amp; 1</code> 使用按位与运算，检查 <code>x</code> 的最低有效位（LSB）。如果是奇数，最低有效位为 1；如果是偶数，最低有效位为 0。</li>
+</ul>
+<h2 id="交换两个整数的值不使用临时变量">交换两个整数的值（不使用临时变量）</h2>
+<pre><code class="language-c">swap(<span class="hljs-type">int</span> *a, <span class="hljs-type">int</span> *b) {
+    *a = *a ^ *b;  <span class="hljs-comment">// a 存储了 a 和 b 的异或结果</span>
+    *b = *a ^ *b;  <span class="hljs-comment">// b 变为原来的 a 的值</span>
+    *a = *a ^ *b;  <span class="hljs-comment">// a 变为原来的 b 的值</span>
 }
-</span></code></pre>
+</code></pre>
 </div>
         </div>
             

@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>&ast;&ast;error10&period;md &lpar;scanf &#x4e0d;&#x80fd;&#x8bfb;&#x53d6;&#x7a7a;&#x683c;&rpar;&ast;&ast;</title>
+            <title>&#x9519;&#x8bef;&#x70b9; 10&#xff1a;scanf &#x4e0d;&#x80fd;&#x8bfb;&#x53d6;&#x7a7a;&#x683c;</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3302,15 +3302,11 @@ body,
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h3 id="error10md-scanf-不能读取空格"><strong><a href="http://error10.html">error10.md</a> (scanf 不能读取空格)</strong></h3>
-<pre><code class="language-markdown"><span class="hljs-section"># 错误点 10：scanf 不能读取空格</span>
-
-使用 <span class="hljs-code">`scanf`</span> 读取字符串时，空格会被当作分隔符，导致只读取到第一个空格前的内容。如果需要读取包含空格的字符串，应该使用 <span class="hljs-code">`fgets`</span> 或者 <span class="hljs-code">`%[^\n]`</span> 格式指定符：
-
-<span class="hljs-code">```c
-char str[100];
-fgets(str, sizeof(str), stdin);  // 读取包含空格的字符串
-</span></code></pre>
+            <div class="github-markdown-content"><h1 id="错误点-10scanf-不能读取空格">错误点 10：scanf 不能读取空格</h1>
+<p>使用 <code>scanf</code> 读取字符串时，空格会被当作分隔符，导致只读取到第一个空格前的内容。如果需要读取包含空格的字符串，应该使用 <code>fgets</code> 或者 <code>%[^\n]</code> 格式指定符：</p>
+<pre><code class="language-c"><span class="hljs-type">char</span> str[<span class="hljs-number">100</span>];
+fgets(str, <span class="hljs-keyword">sizeof</span>(str), <span class="hljs-built_in">stdin</span>);  <span class="hljs-comment">// 读取包含空格的字符串</span>
+</code></pre>
 </div>
         </div>
             

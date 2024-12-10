@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>&ast;&ast;error6&period;md &lpar;&#x5192;&#x6ce1;&#x6392;&#x5e8f;&#x4e2d;&#x5185;&#x5c42;&#x5faa;&#x73af;&#xff0c;&#x6bcf;&#x6b21;&#x5f00;&#x59cb;&#x5904;&#x4e0d;&#x90fd;&#x662f; 0&rpar;&ast;&ast;</title>
+            <title>&#x9519;&#x8bef;&#x70b9; 6&#xff1a;&#x5192;&#x6ce1;&#x6392;&#x5e8f;&#x4e2d;&#x5185;&#x5c42;&#x5faa;&#x73af;&#xff0c;&#x6bcf;&#x6b21;&#x5f00;&#x59cb;&#x5904;&#x4e0d;&#x90fd;&#x662f; 0</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3302,21 +3302,17 @@ body,
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h3 id="error6md-冒泡排序中内层循环每次开始处不都是-0"><strong><a href="http://error6.html">error6.md</a> (冒泡排序中内层循环，每次开始处不都是 0)</strong></h3>
-<pre><code class="language-markdown"><span class="hljs-section"># 错误点 6：冒泡排序中内层循环，每次开始处不都是 0</span>
-
-在进行冒泡排序时，内层循环的起始索引应根据外层循环的当前索引来调整。一般来说，内层循环不必从 <span class="hljs-code">`0`</span> 开始，而是从外层循环索引 <span class="hljs-code">`i+1`</span> 开始。
-
-<span class="hljs-section">## 示例</span>
-<span class="hljs-code">```c
-for (int i = 0; i &lt; n-1; i++) {
-    for (int j = 0; j &lt; n-i-1; j++) {
-        if (arr[j] &gt; arr[j+1]) {
-            // 交换 arr[j] 和 arr[j+1]
+            <div class="github-markdown-content"><h1 id="错误点-6冒泡排序中内层循环每次开始处不都是-0">错误点 6：冒泡排序中内层循环，每次开始处不都是 0</h1>
+<p>在进行冒泡排序时，内层循环的起始索引应根据外层循环的当前索引来调整。一般来说，内层循环不必从 <code>0</code> 开始，而是从外层循环索引 <code>i+1</code> 开始。</p>
+<h2 id="示例">示例</h2>
+<pre><code class="language-c"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n-i<span class="hljs-number">-1</span>; j++) {
+        <span class="hljs-keyword">if</span> (arr[j] &gt; arr[j+<span class="hljs-number">1</span>]) {
+            <span class="hljs-comment">// 交换 arr[j] 和 arr[j+1]</span>
         }
     }
 }
-</span></code></pre>
+</code></pre>
 </div>
         </div>
             

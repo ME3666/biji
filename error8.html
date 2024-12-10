@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>&ast;&ast;error8&period;md &lpar;qsort&#xff1a;&#x4e00;&#x79cd;&#x6392;&#x5e8f;&#x65b9;&#x5f0f;&rpar;&ast;&ast;</title>
+            <title>&#x9519;&#x8bef;&#x70b9; 8&#xff1a;qsort&#xff1a;&#x4e00;&#x79cd;&#x6392;&#x5e8f;&#x65b9;&#x5f0f;</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3302,24 +3302,20 @@ body,
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h3 id="error8md-qsort一种排序方式"><strong><a href="http://error8.html">error8.md</a> (qsort：一种排序方式)</strong></h3>
-<pre><code class="language-markdown"><span class="hljs-section"># 错误点 8：qsort：一种排序方式</span>
+            <div class="github-markdown-content"><h1 id="错误点-8qsort一种排序方式">错误点 8：qsort：一种排序方式</h1>
+<p><code>qsort</code> 是 C 标准库中的快速排序函数，其声明如下：</p>
+<pre><code class="language-c"><span class="hljs-type">void</span> <span class="hljs-title function_">qsort</span><span class="hljs-params">(<span class="hljs-type">void</span> *base, <span class="hljs-type">size_t</span> num, <span class="hljs-type">size_t</span> size, <span class="hljs-type">int</span> (*compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>;
 
-<span class="hljs-code">`qsort`</span> 是 C 标准库中的快速排序函数，其声明如下：
-
-<span class="hljs-code">```c
-void qsort(void *base, size_t num, size_t size, int (*compar)(const void *, const void *));
-
-int compare(const void *a, const void *b) {
-    return (*(int*)a - *(int*)b);  // 从小到大排序
+<span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *a, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *b)</span> {
+    <span class="hljs-keyword">return</span> (*(<span class="hljs-type">int</span>*)a - *(<span class="hljs-type">int</span>*)b);  <span class="hljs-comment">// 从小到大排序</span>
 }
 
-int main() {
-    int arr[] = {3, 1, 2};
-    qsort(arr, 3, sizeof(int), compare);
-    return 0;
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> {
+    <span class="hljs-type">int</span> arr[] = {<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>};
+    qsort(arr, <span class="hljs-number">3</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>), compare);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
-</span></code></pre>
+</code></pre>
 </div>
         </div>
             
