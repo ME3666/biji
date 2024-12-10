@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cuoti.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E5%B8%B8%E8%A7%81-oj-%E9%94%99%E8%AF%AF%E7%82%B9%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见 OJ 错误点及解决方案</h1>
+<ol>
+<li>
+<p><strong>字符串结尾要加上 <code>'\0'</code>，不然会输出奇怪字符</strong><br>
+在处理字符串时，确保每个字符串都有一个结尾符 <code>'\0'</code>，否则可能会出现输出异常或程序错误。</p>
+</li>
+<li>
+<p><strong>一直过不了的题检查算法问题</strong><br>
+如果一个题目一直无法通过，可能是算法上存在问题。检查算法的时间复杂度和实现逻辑，确保其能够正确处理边界情况。</p>
+</li>
+<li>
+<p><strong>可以有三维数组</strong><br>
+C 语言支持使用三维数组。例如，可以声明一个三维数组如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> arr[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>][<span class="hljs-number">10</span>];  <span class="hljs-comment">// 三维数组</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>printf(&quot;\n&quot;);</code> 中双引号</strong><br>
+在使用 <code>printf</code> 打印换行时，确保使用正确的双引号 <code>&quot; &quot;</code> 包围字符串：</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);  <span class="hljs-comment">// 正确的换行输出</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>未赋值的数组输出后是乱码</strong><br>
+如果数组未被初始化或赋值，输出时会出现乱码。务必确保在使用数组前先进行初始化。</p>
+</li>
+<li>
+<p><strong>冒泡排序中内层循环，每次开始处不都是 0</strong><br>
+在进行冒泡排序时，内层循环的起始索引应根据外层循环的当前索引来调整。一般来说，内层循环不必从 <code>0</code> 开始，而是从外层循环索引 <code>i+1</code> 开始。</p>
+</li>
+<li>
+<p><strong>求一个数的特别高次幂时，除了要用循环来快速幂，还要在过程中的每一步求模</strong><br>
+在计算高次幂时，如果涉及到模运算，应该在每一步计算中都进行求模操作，以避免结果过大：</p>
+<pre class="hljs"><code><div>result = (result * base) % mod;
+</div></code></pre>
+</li>
+<li>
+<p><strong><code>qsort</code>：一种排序方式</strong></p>
+<p><code>qsort</code> 是 C 标准库中的快速排序函数，其声明如下：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">qsort</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *base, <span class="hljs-keyword">size_t</span> num, <span class="hljs-keyword">size_t</span> <span class="hljs-built_in">size</span>, <span class="hljs-keyword">int</span> (*compar)(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *, <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *))</span></span>;
+</div></code></pre>
+<ul>
+<li><code>base</code>：指向要排序的数组的第一个元素。</li>
+<li><code>num</code>：数组中元素的个数。</li>
+<li><code>size</code>：数组中每个元素的大小（字节数）。</li>
+<li><code>compar</code>：比较函数，决定元素的排序方式。该函数返回值为：
+<ul>
+<li>小于 0：第一个元素小于第二个元素。</li>
+<li>等于 0：两个元素相等。</li>
+<li>大于 0：第一个元素大于第二个元素。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>二进制操作</strong></p>
+<ul>
+<li>
+<p><code>x % 2</code> vs <code>x &amp; 1</code>：</p>
+<ul>
+<li><code>x % 2</code> 使用模运算，计算 <code>x</code> 除以 2 的余数，结果为 0 表示偶数，1 表示奇数。</li>
+<li><code>x &amp; 1</code> 使用按位与运算，检查 <code>x</code> 的最低有效位（LSB）。如果是奇数，最低有效位为 1；如果是偶数，最低有效位为 0。</li>
+</ul>
+</li>
+<li>
+<p><code>while (x) { x &amp;= (x - 1); count++; }</code>：<br>
+这个循环用于统计 <code>x</code> 中 1 的个数（即 <code>x</code> 的二进制表示中有多少个 1）。每次通过 <code>x &amp;= (x - 1)</code> 操作去掉 <code>x</code> 的最低有效位 1，然后将计数器 <code>count</code> 增加 1。</p>
+</li>
+<li>
+<p>交换两个整数的值（不使用临时变量）：</p>
+<pre class="hljs"><code><div>swap(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b) {
+    *a = *a ^ *b;  <span class="hljs-comment">// a 存储了 a 和 b 的异或结果</span>
+    *b = *a ^ *b;  <span class="hljs-comment">// b 变为原来的 a 的值</span>
+    *a = *a ^ *b;  <span class="hljs-comment">// a 变为原来的 b 的值</span>
+}
+</div></code></pre>
+</li>
+<li>
+<p><code>for (int i = 0; i &lt; n; i++) { result ^= arr[i]; }</code>：<br>
+这段代码计算数组 <code>arr</code> 中所有元素的按位异或结果。<code>result</code> 会被初始化为 0，然后依次与数组元素进行异或操作。异或操作具有“抵消”性质，即两个相同的数字异或后会得到 0，因此它可以用来查找数组中只出现一次的数字，或者做其他与异或相关的计算。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>scanf</code> 不能读取空格</strong><br>
+使用 <code>scanf</code> 读取字符串时，空格会被当作分隔符，导致只读取到第一个空格前的内容。如果需要读取包含空格的字符串，应该使用 <code>fgets</code> 或者 <code>%[^\n]</code> 格式指定符：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">char</span> str[<span class="hljs-number">100</span>];
+fgets(str, <span class="hljs-keyword">sizeof</span>(str), <span class="hljs-built_in">stdin</span>);  <span class="hljs-comment">// 读取包含空格的字符串</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>循环嵌套时，看好变量初始化条件在哪个循环里</strong><br>
+在嵌套循环中，确保每个变量的初始化操作在合适的地方。例如，如果变量在每次迭代中都需要重置，则应将其初始化放在内层循环中。</p>
+</li>
+<li>
+<p><strong>对于长长的数字，可以使用字符串减少时间复杂度</strong><br>
+对于非常大的数字，使用字符串而不是数字类型来处理，可以减少计算的复杂度，尤其是在需要进行大数运算时。</p>
+</li>
+<li>
+<p><strong>筛选素数时，对于较大数字使用 <code>for (int i = 2; i &lt;= sqrt(n); i++)</code></strong><br>
+在筛选素数时，对于较大的数字，检查范围可以缩小到 <code>sqrt(n)</code>，即只需要检查到 <code>n</code> 的平方根。</p>
+</li>
+<li>
+<p><strong><code>sqrt</code> 返回 <code>double</code> 类型</strong><br>
+<code>sqrt</code> 函数返回值类型为 <code>double</code>，即使输入参数为 <code>float</code> 或 <code>int</code> 类型，返回值仍为 <code>double</code>。</p>
+</li>
+</ol>
+
+</body>
+</html>
